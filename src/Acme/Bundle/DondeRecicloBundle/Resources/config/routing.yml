@@ -1,4 +1,3 @@
-_dondereciclo:
-    pattern:  /dondereciclo/{name}
+acme_donde_reciclo_homepage:
+    pattern:  /hello/{name}
     defaults: { _controller: AcmeDondeRecicloBundle:Default:index }
-

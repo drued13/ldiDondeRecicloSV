@@ -1,0 +1,7 @@
+parameters:
+#    acme_donde_reciclo.example.class: Acme\Bundle\DondeRecicloBundle\Example
+
+services:
+#    acme_donde_reciclo.example:
+#        class: %acme_donde_reciclo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
