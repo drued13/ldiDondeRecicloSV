@@ -4,6 +4,7 @@
 namespace Acme\Bundle\DondeRecicloBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \DateTime;
 
 /**
  * @ORM\Entity
@@ -87,7 +88,7 @@ class User
 	
 	public function setFname($fname)
 	{
-		$this->Fname = $fname;
+		$this->fname = $fname;
 	}
 	
 	public function getLname()
@@ -125,6 +126,11 @@ class User
 		$this->password = sha1($password);
 	}
 	
+	public function getPassword()
+	{
+		return $this->password;
+	}
+	
 	public function getPoints()
 	{
 		return $this->points;
@@ -156,7 +162,7 @@ class User
 	}
 	
 	/**
-	 * @PrePersist
+	 * @ORM\PrePersist
 	 */
 	public function prePersist()
 	{
@@ -165,7 +171,7 @@ class User
 	}
 	
 	/**
-	 * @PreUpdate
+	 * @ORM\PreUpdate
 	 */
 	public function preUpdate()
 	{

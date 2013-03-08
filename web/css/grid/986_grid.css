@@ -1,0 +1,58 @@
+/*	SimpleGrid - a fork of CSSGrid by Crowd Favorite (https://github.com/crowdfavorite/css-grid)
+ *	http://simplegrid.info
+ *	by Conor Muirhead (http://conor.cc) of Early LLC (http://earlymade.com)	
+ *  License: http://creativecommons.org/licenses/MIT/	*/
+
+/* Containers */
+
+.grid{ width:966px; }
+
+/* Slots Setup */
+.slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5,.slot-0-1,.slot-0-1-2,.slot-0-1-2-3,.slot-0-1-2-3-4,.slot-0-1-2-3-4-5,.slot-1-2,.slot-1-2-3,.slot-1-2-3-4,.slot-1-2-3-4-5,.slot-2-3,.slot-2-3-4,.slot-2-3-4-5,.slot-3-4,.slot-3-4-5,.slot-4-5,.slot-6,.slot-7,.slot-8,.slot-9,.slot-6-7,.slot-6-7-8,.slot-6-7-8-9,.slot-7-8,.slot-7-8-9,.slot-8-9,.slot-10,.slot-11,.slot-12,.slot-13,.slot-14,.slot-15,.slot-16,.slot-17{ display:inline; float:left; margin-left:30px; }
+
+.slot-10-11,.slot-11-12,.slot-12-13,.slot-13-14,.slot-14-15,.slot-15-16,.slot-16-17,.slot-10-11-12,.slot-11-12-13,.slot-12-13-14,.slot-13-14-15,.slot-14-15-16,.slot-15-16-17,.slot-10-11-12-13,.slot-11-12-13-14,.slot-12-13-14-15,.slot-13-14-15-16,.slot-14-15-16-17,.slot-10-11-12-13-14,.slot-11-12-13-14-15,.slot-12-13-14-15-16,.slot-13-14-15-16-17,.slot-10-11-12-13-14-15,.slot-11-12-13-14-15-16,.slot-12-13-14-15-16-17,.slot-10-11-12-13-14-15-16,.slot-11-12-13-14-15-16-17 { display:inline; float:left; margin-left:30px; }
+
+/* 8-Col Grid Sizes */
+.slot-10,.slot-11,.slot-12,.slot-13,.slot-14,.slot-15,.slot-16,.slot-17{ width:93px; } 
+.slot-10-11,.slot-11-12,.slot-12-13,.slot-13-14,.slot-14-15,.slot-15-16,.slot-16-17{ width: 216px; }
+.slot-10-11-12,.slot-11-12-13,.slot-12-13-14,.slot-13-14-15,.slot-14-15-16,.slot-15-16-17{ width: 339px; }
+.slot-10-11-12-13,.slot-11-12-13-14,.slot-12-13-14-15,.slot-13-14-15-16,.slot-14-15-16-17{ width: 462px; }
+.slot-10-11-12-13-14,.slot-11-12-13-14-15,.slot-12-13-14-15-16,.slot-13-14-15-16-17{ width: 585px; }
+.slot-10-11-12-13-14-15,.slot-11-12-13-14-15-16,.slot-12-13-14-15-16-17{ width: 708px; }
+.slot-10-11-12-13-14-15-16,.slot-11-12-13-14-15-16-17{ width: 831px; }
+
+/* 6-Col Grid Sizes */
+.slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5{ width:136px; } /* Sixths */
+.slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width:302px; } /* Thirds */
+.slot-0-1-2-3,.slot-1-2-3-4,.slot-2-3-4-5{ width:634px; } /* Two-Thirds */
+.slot-0-1-2-3-4,.slot-1-2-3-4-5{ width:800px; } /* Five-Sixths */
+
+/* 4-Col Grid Sizes */
+.slot-6,.slot-7,.slot-8,.slot-9{ width:219px; } /* Quarters */
+.slot-6-7-8,.slot-7-8-9{ width:717px; } /* Three-Quarters */
+
+/* 6-Col/4-Col Shared Grid Sizes */
+.slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width:468px; } /* Halves */
+
+
+/* 8-Col Grid Sizes */
+.push-10,.push-11,.push-12,.push-13,.push-14,.push-15,.push-16,.push-17{ left:93px; } 
+.push-10-11,.push-11-12,.push-12-13,.push-13-14,.push-14-15,.push-15-16,.push-16-17{ left: 216px; }
+.push-10-11-12,.push-11-12-13,.push-12-13-14,.push-13-14-15,.push-14-15-16,.push-15-16-17{ left: 339px; }
+.push-10-11-12-13,.push-11-12-13-14,.push-12-13-14-15,.push-13-14-15-16,.push-14-15-16-17{ left: 462px; }
+.push-10-11-12-13-14,.push-11-12-13-14-15,.push-12-13-14-15-16,.push-13-14-15-16-17{ left: 585px; }
+.push-10-11-12-13-14-15,.push-11-12-13-14-15-16,.push-12-13-14-15-16-17{ left: 708px; }
+.push-10-11-12-13-14-15-16,.push-11-12-13-14-15-16-17{ left: 831px; }
+
+/* 6-Col Grid Sizes */
+.push-0,.push-1,.push-2,.push-3,.push-4,.push-5{ left:136px; } /* Sixths */
+.push-0-1,.push-1-2,.push-2-3,.push-3-4,.push-4-5{ left:302px; } /* Thirds */
+.push-0-1-2-3,.push-1-2-3-4,.push-2-3-4-5{ left:634px; } /* Two-Thirds */
+.push-0-1-2-3-4,.push-1-2-3-4-5{ left:800px; } /* Five-Sixths */
+
+/* 4-Col Grid Sizes */
+.push-6,.push-7,.push-8,.push-9{ left:219px; } /* Quarters */
+.push-6-7-8,.push-7-8-9{ left:717px; } /* Three-Quarters */
+
+/* 6-Col/4-Col Shared Grid Sizes */
+.push-0-1-2,.push-1-2-3,.push-2-3-4,.push-3-4-5, .push-6-7,.push-7-8,.push-8-9{ left:468px; } /* Halves */

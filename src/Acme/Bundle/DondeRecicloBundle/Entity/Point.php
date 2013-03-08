@@ -3,6 +3,7 @@
 namespace Acme\Bundle\DondeRecicloBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \DateTime;
 
 /**
  * @ORM\Entity
@@ -219,7 +220,7 @@ class Point {
 	}
 	
 	/**
-	 * @PrePersist
+	 * @ORM\PrePersist
 	 */
 	public function prePersist()
 	{
@@ -228,7 +229,7 @@ class Point {
 	}
 	
 	/**
-	 * @PreUpdate
+	 * @ORM\PreUpdate
 	 */
 	public function preUpdate()
 	{

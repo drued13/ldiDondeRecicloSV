@@ -1,0 +1,15 @@
+{% set url_raiz = '' %}
+{% extends 'base.twig' %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$(function(){
+			$("li#tab-1").addClass('active');
+		});
+	</script>
+{% endblock javascripts %}
+
+{% block container %}
+	
+{% endblock container %}

@@ -2,3 +2,14 @@ _dondereciclo:
     pattern:  /dondereciclo/{name}
     defaults: { _controller: AcmeDondeRecicloBundle:Default:index }
 
+_test:
+    pattern: /dondereciclo/test/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:test }
+    
+_user:
+    pattern: /dondereciclo/user/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:user }
+    
+_user_success:
+    pattern: /dondereciclo/user/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:user }

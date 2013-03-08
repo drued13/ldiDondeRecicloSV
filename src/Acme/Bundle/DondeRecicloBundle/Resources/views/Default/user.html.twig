@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block container %}
+
+	<form action="{{ path('_user') }}" method="post" {{ form_enctype(form) }}>
+	
+	{{ form_widget(form) }}
+	<input type="submit" />
+	
+	</form>
+	
+{% endblock  %}

@@ -1,0 +1,56 @@
+/*	SimpleGrid - a fork of CSSGrid by Crowd Favorite (https://github.com/crowdfavorite/css-grid)
+ *	http://simplegrid.info
+ *	by Conor Muirhead (http://conor.cc) of Early LLC (http://earlymade.com)	
+ *  License: http://creativecommons.org/licenses/MIT/	*/
+
+/* Containers */
+
+.grid{ width:1206px; }
+
+
+
+/* 8-Col Grid Sizes */
+.slot-10,.slot-11,.slot-12,.slot-13,.slot-14,.slot-15,.slot-16,.slot-17{ width:124px; } 
+.slot-10-11,.slot-11-12,.slot-12-13,.slot-13-14,.slot-14-15,.slot-15-16,.slot-16-17{ width: 278px; }
+.slot-10-11-12,.slot-11-12-13,.slot-12-13-14,.slot-13-14-15,.slot-14-15-16,.slot-15-16-17{ width: 432px; }
+.slot-10-11-12-13,.slot-11-12-13-14,.slot-12-13-14-15,.slot-13-14-15-16,.slot-14-15-16-17{ width: 586px; }
+.slot-10-11-12-13-14,.slot-11-12-13-14-15,.slot-12-13-14-15-16,.slot-13-14-15-16-17{ width: 740px; }
+.slot-10-11-12-13-14-15,.slot-11-12-13-14-15-16,.slot-12-13-14-15-16-17{ width: 894px; }
+.slot-10-11-12-13-14-15-16,.slot-11-12-13-14-15-16-17{ width: 1048px; }
+
+
+/* 6-Col Grid Sizes */
+.slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5{ width:176px; } /* Sixths */
+.slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width:382px; } /* Thirds */
+.slot-0-1-2-3,.slot-1-2-3-4,.slot-2-3-4-5{ width:794px; } /* Two-Thirds */
+.slot-0-1-2-3-4,.slot-1-2-3-4-5{ width:1000px; } /* Five-Sixths */
+
+/* 4-Col Grid Sizes */30
+.slot-6,.slot-7,.slot-8,.slot-9{ width:279px; } /* Quarters */
+.slot-6-7-8,.slot-7-8-9{ width:897px; } /* Three-Quarters */
+
+/* 6-Col/4-Col Shared Grid Sizes */
+.slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width:588px; } /* Halves */
+
+
+.push-10,.push-11,.push-12,.push-13,.push-14,.push-15,.push-16,.push-17{ left:124px; } 
+.push-10-11,.push-11-12,.push-12-13,.push-13-14,.push-14-15,.push-15-16,.push-16-17{ left: 278px; }
+.push-10-11-12,.push-11-12-13,.push-12-13-14,.push-13-14-15,.push-14-15-16,.push-15-16-17{ left: 432px; }
+.push-10-11-12-13,.push-11-12-13-14,.push-12-13-14-15,.push-13-14-15-16,.push-14-15-16-17{ left: 586px; }
+.push-10-11-12-13-14,.push-11-12-13-14-15,.push-12-13-14-15-16,.push-13-14-15-16-17{ left: 740px; }
+.push-10-11-12-13-14-15,.push-11-12-13-14-15-16,.push-12-13-14-15-16-17{ left: 894px; }
+.push-10-11-12-13-14-15-16,.push-11-12-13-14-15-16-17{ left: 1048px; }
+
+
+/* 6-Col Grid Sizes */
+.push-0,.push-1,.push-2,.push-3,.push-4,.push-5{ left:176px; } /* Sixths */
+.push-0-1,.push-1-2,.push-2-3,.push-3-4,.push-4-5{ left:382px; } /* Thirds */
+.push-0-1-2-3,.push-1-2-3-4,.push-2-3-4-5{ left:794px; } /* Two-Thirds */
+.push-0-1-2-3-4,.push-1-2-3-4-5{ left:1000px; } /* Five-Sixths */
+
+/* 4-Col Grid Sizes */30
+.push-6,.push-7,.push-8,.push-9{ left:279px; } /* Quarters */
+.push-6-7-8,.push-7-8-9{ left:897px; } /* Three-Quarters */
+
+/* 6-Col/4-Col Shared Grid Sizes */
+.push-0-1-2,.push-1-2-3,.push-2-3-4,.push-3-4-5, .push-6-7,.push-7-8,.push-8-9{ left:588px; } /* Halves */

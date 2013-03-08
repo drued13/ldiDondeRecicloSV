@@ -206,9 +206,42 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // _dondereciclo
-        if (0 === strpos($pathinfo, '/dondereciclo') && preg_match('#^/dondereciclo/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => '_dondereciclo')), array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::indexAction',));
+        if (0 === strpos($pathinfo, '/dondereciclo')) {
+            // _dondereciclo
+            if (preg_match('#^/dondereciclo/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => '_dondereciclo')), array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // _test
+            if (rtrim($pathinfo, '/') === '/dondereciclo/test') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', '_test');
+                }
+
+                return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::testAction',  '_route' => '_test',);
+            }
+
+            if (0 === strpos($pathinfo, '/dondereciclo/user')) {
+                // _user
+                if (rtrim($pathinfo, '/') === '/dondereciclo/user') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', '_user');
+                    }
+
+                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::userAction',  '_route' => '_user',);
+                }
+
+                // _user_success
+                if (rtrim($pathinfo, '/') === '/dondereciclo/user') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', '_user_success');
+                    }
+
+                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::userAction',  '_route' => '_user_success',);
+                }
+
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

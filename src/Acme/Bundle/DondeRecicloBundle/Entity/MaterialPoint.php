@@ -3,6 +3,7 @@
 namespace Acme\Bundle\DondeRecicloBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \DateTime;
 
 /**
  * @ORM\Entity
@@ -30,7 +31,7 @@ class MaterialPoint
 	
 	/**
 	 * @ORM\ManyToOne(targetEntity="MaterialType", inversedBy="materialType")
-	 * @JoinColumn(name="material_type_id", referencedColumnName="id")
+	 * @ORM\JoinColumn(name="material_type_id", referencedColumnName="id")
 	 */
 	protected $materialType;
 	
@@ -107,7 +108,7 @@ class MaterialPoint
 	}
 	
 	/**
-     * @PrePersist
+     * @ORM\PrePersist
      */
     public function prePersist()
     {
@@ -116,7 +117,7 @@ class MaterialPoint
     }
     
     /**
-     * @PreUpdate
+     * @ORM\PreUpdate
      */
 	public function preUpdate()
 	{

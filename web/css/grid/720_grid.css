@@ -1,0 +1,83 @@
+/*	SimpleGrid - a fork of CSSGrid by Crowd Favorite (https://github.com/crowdfavorite/css-grid)
+ *	http://simplegrid.info
+ *	by Conor Muirhead (http://conor.cc) of Early LLC (http://earlymade.com)	
+ *  License: http://creativecommons.org/licenses/MIT/	*/
+
+/* Containers */
+
+.grid{ margin:0 auto; padding: 0 10px; width:700px; }
+.row{ clear:left; }
+
+p {
+background: #ffc;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+font-family: Menlo, 'Panic Sans', monospace;
+padding: 1em;
+margin: 0 0 1em;
+}
+
+
+/* Slots Setup */
+.slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5,.slot-0-1,.slot-0-1-2,.slot-0-1-2-3,.slot-0-1-2-3-4,.slot-0-1-2-3-4-5,.slot-1-2,.slot-1-2-3,.slot-1-2-3-4,.slot-1-2-3-4-5,.slot-2-3,.slot-2-3-4,.slot-2-3-4-5,.slot-3-4,.slot-3-4-5,.slot-4-5,.slot-6,.slot-7,.slot-8,.slot-9,.slot-6-7,.slot-6-7-8,.slot-6-7-8-9,.slot-7-8,.slot-7-8-9,.slot-8-9,.slot-10,.slot-11,.slot-12,.slot-13,.slot-14,.slot-15,.slot-16,.slot-17{ display:inline; float:left; margin-left:20px;position:relative; }
+
+.slot-10-11,.slot-11-12,.slot-12-13,.slot-13-14,.slot-14-15,.slot-15-16,.slot-16-17,.slot-10-11-12,.slot-11-12-13,.slot-12-13-14,.slot-13-14-15,.slot-14-15-16,.slot-15-16-17,.slot-10-11-12-13,.slot-11-12-13-14,.slot-12-13-14-15,.slot-13-14-15-16,.slot-14-15-16-17,.slot-10-11-12-13-14,.slot-11-12-13-14-15,.slot-12-13-14-15-16,.slot-13-14-15-16-17,.slot-10-11-12-13-14-15,.slot-11-12-13-14-15-16,.slot-12-13-14-15-16-17,.slot-10-11-12-13-14-15-16,.slot-11-12-13-14-15-16-17 { display:inline; float:left; margin-left:20px;;position:relative; }
+
+/* 8-Col Grid Sizes */
+.slot-10,.slot-11,.slot-12,.slot-13,.slot-14,.slot-15,.slot-16,.slot-17{ width:70px; } 
+.slot-10-11,.slot-11-12,.slot-12-13,.slot-13-14,.slot-14-15,.slot-15-16,.slot-16-17{ width: 160px; }
+.slot-10-11-12,.slot-11-12-13,.slot-12-13-14,.slot-13-14-15,.slot-14-15-16,.slot-15-16-17{ width: 250px; }
+.slot-10-11-12-13,.slot-11-12-13-14,.slot-12-13-14-15,.slot-13-14-15-16,.slot-14-15-16-17{ width: 340px; }
+.slot-10-11-12-13-14,.slot-11-12-13-14-15,.slot-12-13-14-15-16,.slot-13-14-15-16-17{ width: 430px; }
+.slot-10-11-12-13-14-15,.slot-11-12-13-14-15-16,.slot-12-13-14-15-16-17{ width: 520px; }
+.slot-10-11-12-13-14-15-16,.slot-11-12-13-14-15-16-17{ width: 610px; }
+
+
+/* 6-Col Grid Sizes */
+.slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5{ width:100px; } /* Sixths */
+.slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width:220px; } /* Thirds */
+.slot-0-1-2-3,.slot-1-2-3-4,.slot-2-3-4-5{ width:460px; } /* Two-Thirds */
+.slot-0-1-2-3-4,.slot-1-2-3-4-5{ width:580px; } /* Five-Sixths */
+
+/* 4-Col Grid Sizes */
+.slot-6,.slot-7,.slot-8,.slot-9{ width:160px; } /* Quarters */
+.slot-6-7-8,.slot-7-8-9{ width:520px; } /* Three-Quarters */
+
+/* 6-Col/4-Col Shared Grid Sizes */
+.slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width:340px; } /* Halves */
+.slot-0-1-2-3-4-5, .slot-6-7-8-9{ width: 100%; } /* Full-Width */
+
+/* Zeroing Out Leftmost Slot Margins */
+.slot-0,.slot-0-1,.slot-0-1-2,.slot-0-1-2-3,.slot-0-1-2-3-4,.slot-0-1-2-3-4-5,.slot-6,.slot-6-7,.slot-6-7-8,.slot-6-7-8-9,.slot-10,.slot-10-11,.slot-01-11-12,.slot-10-11-12-13,.slot-10-11-12-13-14,.slot-10-11-12-13-14-15,.slot-10-11-12-13-14-15-16,.slot-10-11-12-13-14-15-16-17,.slot-1 .slot-1,.slot-1-2 .slot-1,.slot-1-2 .slot-1-2,.slot-1-2-3 .slot-1,.slot-1-2-3 .slot-1-2,.slot-1-2-3 .slot-1-2-3,.slot-1-2-3-4 .slot-1,.slot-1-2-3-4 .slot-1-2,.slot-1-2-3-4 .slot-1-2-3,.slot-1-2-3-4 .slot-1-2-3-4,.slot-1-2-3-4-5 .slot-1,.slot-1-2-3-4-5 .slot-1-2,.slot-1-2-3-4-5 .slot-1-2-3,.slot-1-2-3-4-5 .slot-1-2-3-4,.slot-1-2-3-4-5 .slot-1-2-3-4-5,.slot-2 .slot-2,.slot-2-3 .slot-2,.slot-2-3 .slot-2-3,.slot-2-3-4 .slot-2,.slot-2-3-4 .slot-2-3,.slot-2-3-4 .slot-2-3-4,.slot-2-3-4-5 .slot-2,.slot-2-3-4-5 .slot-2-3,.slot-2-3-4-5 .slot-2-3-4,.slot-2-3-4-5 .slot-2-3-4-5,.slot-3 .slot-3,.slot-3-4 .slot-3,.slot-3-4 .slot-3-4,.slot-3-4-5 .slot-3,.slot-3-4-5 .slot-3-4,.slot-3-4-5 .slot-3-4-5,.slot-4 .slot-4,.slot-4-5 .slot-4,.slot-4-5 .slot-4-5,.slot-5 .slot-5,.slot-7 .slot-7,.slot-7-8 .slot-7,.slot-7-8 .slot-7-8,.slot-7-8-9 .slot-7,.slot-7-8-9 .slot-7-8,.slot-7-8-9 .slot-7-8-9,.slot-8 .slot-8,.slot-8-9 .slot-8,.slot-8-9 .slot-8-9{ margin-left:0 !important; } /* Important is to avoid repeating this in larger screen css files */
+
+/* Row Clearfix */
+.row:after{ visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0; }
+.row{ zoom:1; }
+
+
+/* 8-Col Grid Sizes */
+.push-0,.push-1,.push-2,.push-3,.push-4,.push-5,.push-0-1,.push-0-1-2,.push-0-1-2-3,.push-0-1-2-3-4,.push-0-1-2-3-4-5,.push-1-2,.push-1-2-3,.push-1-2-3-4,.push-1-2-3-4-5,.push-2-3,.push-2-3-4,.push-2-3-4-5,.push-3-4,.push-3-4-5,.push-4-5,.push-6,.push-7,.push-8,.push-9,.push-6-7,.push-6-7-8,.push-6-7-8-9,.push-7-8,.push-7-8-9,.push-8-9,.push-10,.push-11,.push-12,.push-13,.push-14,.push-15,.push-16,.push-17 { position: relative; }
+
+.push-10-11,.push-11-12,.push-12-13,.push-13-14,.push-14-15,.push-15-16,.push-16-17,.push-10-11-12,.push-11-12-13,.push-12-13-14,.push-13-14-15,.push-14-15-16,.push-15-16-17,.push-10-11-12-13,.push-11-12-13-14,.push-12-13-14-15,.push-13-14-15-16,.push-14-15-16-17,.push-10-11-12-13-14,.push-11-12-13-14-15,.push-12-13-14-15-16,.push-13-14-15-16-17,.push-10-11-12-13-14-15,.push-11-12-13-14-15-16,.push-12-13-14-15-16-17,.push-10-11-12-13-14-15-16,.push-11-12-13-14-15-16-17 { position: relative; }
+
+.push-10,.push-11,.push-12,.push-13,.push-14,.push-15,.push-16,.push-17{ left:70px; } 
+.push-10-11,.push-11-12,.push-12-13,.push-13-14,.push-14-15,.push-15-16,.push-16-17{ left: 160px; }
+.push-10-11-12,.push-11-12-13,.push-12-13-14,.push-13-14-15,.push-14-15-16,.push-15-16-17{ left: 250px; }
+.push-10-11-12-13,.push-11-12-13-14,.push-12-13-14-15,.push-13-14-15-16,.push-14-15-16-17{ left: 340px; }
+.push-10-11-12-13-14,.push-11-12-13-14-15,.push-12-13-14-15-16,.push-13-14-15-16-17{ left: 430px; }
+.push-10-11-12-13-14-15,.push-11-12-13-14-15-16,.push-12-13-14-15-16-17{ left: 520px; }
+.push-10-11-12-13-14-15-16,.push-11-12-13-14-15-16-17{ left: 610px; }
+
+
+/* 6-Col Grid Sizes */
+.push-0,.push-1,.push-2,.push-3,.push-4,.push-5{ left:100px; } /* Sixths */
+.push-0-1,.push-1-2,.push-2-3,.push-3-4,.push-4-5{ left:220px; } /* Thirds */
+.push-0-1-2-3,.push-1-2-3-4,.push-2-3-4-5{ left:460px; } /* Two-Thirds */
+.push-0-1-2-3-4,.push-1-2-3-4-5{ left:580px; } /* Five-Sixths */
+
+/* 4-Col Grid Sizes */
+.push-6,.push-7,.push-8,.push-9{ left:160px; } /* Quarters */
+.push-6-7-8,.push-7-8-9{ left:520px; } /* Three-Quarters */
+
+/* 6-Col/4-Col Shared Grid Sizes */
+.push-0-1-2,.push-1-2-3,.push-2-3-4,.push-3-4-5, .push-6-7,.push-7-8,.push-8-9{ left:340px; } /* Halves */

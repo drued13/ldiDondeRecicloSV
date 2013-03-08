@@ -1,13 +1,58 @@
 <!DOCTYPE html>
+
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+<meta charset="utf-8"> 
+<title>{% block title "¿Dónde Reciclo?" %}</title>
+
+{% set minwidth = '720' %}
+
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('js/jquery-1.7.1.min.js') }}"></script>
+{% endblock javascripts%}
+
+{% block stylesheets %}
+
+<!--[if lt IE 9 ]><link rel="stylesheet" href="{{ asset('css/grid2/986_grid.css" type="text/css"') }}><![endif]-->
+<link rel="stylesheet" href="{{ asset('css/grid/720_grid.css') }}" type="text/css" media="screen">
+<link rel="stylesheet" href="{{ asset('css/grid/986_grid.css') }}" type="text/css" media="screen and (min-width: 986px)">
+<link rel="stylesheet" href="{{ asset('css/grid/1236_grid.css') }}" type="text/css" media="screen and (min-width: 1236px)">
+
+<link rel="stylesheet" href="{{ asset('') }}css/nav.css">
+
+{% endblock stylesheets %}
+
+</head>
+
+<body class="grid">
+
+{% block body %}
+
+	<header class="container">
+		<nav>
+			<ul class="nav row">
+			{% block header %}
+		        <li class="slot-10" id="tab-1"><a href="" class="nav-icon" title="Home"><span class="icon-home">Home</span></a></li>
+		        <li class="slot-1" id="tab-2"><a href="site/recyclemap/" title="Location">Locations</a></li>
+		        <li class="slot-2" id="tab-3"><a href="site/addpoint/" title="addOne">Add one</a></li>
+		        <li class="slot-3" id="tab-4"><a href="" title="Partners">Partners</a></li>
+		        <li class="slot-4" id="tab-5"><a href="" title="About">About</a></li>
+		        <li class="slot-5" id="tab-6"><a href="" title="Contact">Contact</a></li>
+			{% endblock header %}
+			</ul>
+		</nav>
+	</header>
+	{% block container %}
+	
+	{% endblock container %}
+	
+	<footer>
+	{% block footer %}
+	
+	{% endblock %}
+	</footer>
+{% endblock body %}
+
+</body>
+
 </html>
