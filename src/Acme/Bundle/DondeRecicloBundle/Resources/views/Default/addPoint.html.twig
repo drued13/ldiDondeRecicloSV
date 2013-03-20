@@ -1,0 +1,91 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=true&language=en&libraries=places"></script>
+	<script type="text/javascript" src="{{ asset('js/point.js') }}"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("li#tab-3").addClass('active');
+			$("#addPointForm").validate();
+		});
+	</script>
+{% endblock javascripts %}
+
+{% block container %}
+<form action="{{ path('_point') }}" method="post" id="addPointForm">
+	
+	<div class="row">
+		<label for="placeName" class="slot-0">Place name:</label>
+		<input type="text" class="slot-0 required" name="placeName" id="placeName" />
+	</div>
+	
+	<div class="row">
+		<label for="contactEmail" class="slot-0">Contact Email:</label>
+		<input type="text" class="slot-0" name="contactEmail" id="contactEmail" />
+	</div>
+	
+	<div class="row">
+		<label for="contactPhone" class="slot-0">Contact Phone:</label>
+		<input type="text" class="slot-0" name="contactPhone" id="contactPhone" />
+	</div>
+	
+	<div class="row">
+		<label for="address" class="slot-0">Address:</label>
+		<input type="text" class="slot-0" name="address" id="address" />
+	</div>
+	
+	<div class="row">
+		<label for="website" class="slot-0">Website:</label>
+		<input type="text" class="slot-0" name="website" id="website" />
+	</div>
+	
+	<div class="row">
+		<label for="countryGeonameId" class="slot-0">Country:</label>
+		<select class="slot-0 required" id="countryGeonameId" name="countryGeonameId">
+			<option value>{% trans %}Select{% endtrans %}</option>
+		</select>
+	</div>
+	
+	<div class="row">
+		<label for="stateGeonameId" class="slot-0">State:</label>
+		<select class="slot-0 required" id="stateGeonameId" name="stateGeonameId">
+			<option value>{% trans %}Select{% endtrans %}</option>
+		</select>
+	</div>
+	
+	<div class="row">
+		<label for="cityGeonameId" class="slot-0">City:</label>
+		<select class="slot-0" id="cityGeonameId" name="cityGeonameId">
+			<option>{% trans %}Select{% endtrans %}</option>
+		</select>
+	</div>
+	
+	<div class="row">
+		<label for="materialType" class="slot-0">Material Type:</label>
+		{% for mt in materialType %}
+			<div class="row">
+				<label for="{{ mt.name }}" class="slot-1">{{ mt.name }}</label>
+				<input type="checkbox" name="materialType[]" id="{{ mt.name }}" value="{{ mt.id }}"/>			
+			</div>
+		{% endfor %}
+	</div>
+	
+	<input type="hidden" name="lat" id="lat" value="13.67"/>
+	
+	<input type="hidden" name="lng" id="lng" value="-89.5"/>
+	
+	<div class="row">
+		<span class="slot-0 text-form">Find the location in the map</span><input id="searchTextField" size="50" type="text" class="slot-1-2" placeholder="Enter a location" autocomplete="off">
+	</div>
+	<div class="row slot-6-7" id="map" style="height:400px">
+	
+	</div>
+	
+	
+	
+	
+	<input type="submit" />
+	
+</form>	
+{% endblock container %}

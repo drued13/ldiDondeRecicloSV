@@ -13,3 +13,19 @@ _user:
 _user_success:
     pattern: /dondereciclo/user/
     defaults: { _controller: AcmeDondeRecicloBundle:Default:user }
+    
+_user_fail:
+    pattern: /dondereciclo/user/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:user }
+    
+_point:
+    pattern: /dondereciclo/point/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:point }
+    
+_point_success:
+    pattern: /dondereciclo/point/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:point }
+    
+_point_fail:
+    pattern: /dondereciclo/point/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:point }
