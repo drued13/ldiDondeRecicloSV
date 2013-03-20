@@ -240,6 +240,45 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::userAction',  '_route' => '_user_success',);
                 }
 
+                // _user_fail
+                if (rtrim($pathinfo, '/') === '/dondereciclo/user') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', '_user_fail');
+                    }
+
+                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::userAction',  '_route' => '_user_fail',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/dondereciclo/point')) {
+                // _point
+                if (rtrim($pathinfo, '/') === '/dondereciclo/point') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', '_point');
+                    }
+
+                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point',);
+                }
+
+                // _point_success
+                if (rtrim($pathinfo, '/') === '/dondereciclo/point') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', '_point_success');
+                    }
+
+                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point_success',);
+                }
+
+                // _point_fail
+                if (rtrim($pathinfo, '/') === '/dondereciclo/point') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', '_point_fail');
+                    }
+
+                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point_fail',);
+                }
+
             }
 
         }
