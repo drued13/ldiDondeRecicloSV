@@ -4,7 +4,7 @@ namespace Acme\Bundle\DondeRecicloBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 
-use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -15,6 +15,8 @@ use Acme\Bundle\DondeRecicloBundle\Entity\Point;
 use Acme\Bundle\DondeRecicloBundle\Entity\MaterialPoint;
 
 use Acme\Bundle\DondeRecicloBundle\Entity\MaterialType;
+
+
 
 use \Exception;
 
@@ -56,7 +58,7 @@ class DefaultController extends Controller
     {
     	
     		$em = $this->getDoctrine()->getManager();
-    		
+    		$materialType = $this->getDoctrine()->getRepository('AcmeDondeRecicloBundle:MaterialType')->findAll();
     		if ($request->getMethod() == 'POST') {
     			try {
     				$em->beginTransaction();
@@ -64,13 +66,14 @@ class DefaultController extends Controller
     				 
     				$point =new Point();
     				 
-    				$point->setPlaceName($request->request->get('materialType'));
+    				$point->setPlaceName($request->request->get('placeName'));
     				$point->setContactEmail($request->request->get('contactEmail'));
     				$point->setContactPhone($request->request->get('ContactPhone'));
     				$point->setAddress($request->request->get('Address'));
     				$point->setWebsite($request->request->get('website'));
     				$point->setCountryGeonameId($request->request->get('countryGeonameId'));
     				$point->setStateGeonameId($request->request->get('stateGeonameId'));
+    				$point->setCityGeonameId($request->request->get('cityGeonameId'));
     				$point->setLat($request->request->get('lat'));
     				$point->setLng($request->request->get('lng'));
     				$point->setUser($user);
@@ -91,15 +94,51 @@ class DefaultController extends Controller
     			}catch(Exception $e)
     			{
     				$em->rollback();
-    				return $this->redirect($this->generateUrl('_point_fail'));
+    				return $this->render('AcmeDondeRecicloBundle:Default:addPoint.html.twig', array('materialType' => $materialType,'status' => $e->getMessage()));
     			}
     		}else{
-    			$materialType = $this->getDoctrine()->getRepository('AcmeDondeRecicloBundle:MaterialType')->findAll();
-    			return $this->render('AcmeDondeRecicloBundle:Default:addPoint.html.twig', array('materialType' => $materialType));
+    			
+    			return $this->render('AcmeDondeRecicloBundle:Default:addPoint.html.twig', array('materialType' => $materialType,'status' => 'index'));
     		}
-    	
+    }
     
+    public function mapAction()
+    {
+    	//$points = $this->getDoctrine()->getRepository('AcmeDondeRecicloBundle:Point')->findAll();
     	
+    	return $this->render('AcmeDondeRecicloBundle:Default:recycleMap.html.twig');
+    }
+    
+    public function pointsAction()
+    {
+    	//$materialType = $request->query->get('materialType');
+    	
+    		$points = $this->getDoctrine()->getRepository('AcmeDondeRecicloBundle:Point')->findAll();
+    		
+    		$contents =array();
+    		$content = array();
+    		 
+    		foreach($points as $point){
+    				$data = array(
+    					"placeName" => $point->getPlaceName(),
+    					"contactEmail" => $point->getContactEmail(),
+    					"contactPhone" => $point->getContactPhone(),
+    					"address" => $point->getAddress(),
+    					"website" => $point->getWebsite(),
+    					"countryGeonameId" => $point->getCountryGeonameId(),
+    					"stateGeonameId" => $point->getStateGeonameId(),
+    					"cityGeonameId" => $point->getCityGeonameId(),
+    					"lat" => $point->getLat(),
+    					"lng" => $point->getLng(),
+    					"materialPoints" => $point->getMaterialPoints()
+    				);
+    				$content[] = $data;
+    		 
+    		$contents["content"] = $content;
+    	}
+    	
+    	$response = new Response(json_encode($contents));
+    	return $response;
     }
     
     public function testAction()

@@ -35,10 +35,9 @@
 		<nav>
 			<ul class="nav row">
 			{% block header %}
-		        <li class="slot-10" id="tab-1"><a href="" class="nav-icon" title="Home"><span class="icon-home">Home</span></a></li>
-		        <li class="slot-1" id="tab-2"><a href="site/recyclemap/" title="Location">Locations</a></li>
-		        <li class="slot-2" id="tab-3"><a href="site/addpoint/" title="addOne">Add one</a></li>
-		        <li class="slot-3" id="tab-4"><a href="" title="Partners">Partners</a></li>
+		        <li class="slot-10" id="tab-1"><a href="{{ path('_map') }}" class="nav-icon" title="Home"><span class="icon-home">Home</span></a></li>
+		        <li class="slot-2" id="tab-3"><a href="{{ path('_point') }}" title="addOne">Add one</a></li>
+		        <li class="slot-3" id="tab-4"><a href="{{ path('_user') }}" title="Partners">User</a></li>
 		        <li class="slot-4" id="tab-5"><a href="" title="About">About</a></li>
 		        <li class="slot-5" id="tab-6"><a href="" title="Contact">Contact</a></li>
 			{% endblock header %}

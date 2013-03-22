@@ -3,6 +3,7 @@
 namespace Acme\Bundle\DondeRecicloBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 use \DateTime;
 
 /**
@@ -11,7 +12,7 @@ use \DateTime;
  * @ORM\HasLifecycleCallbacks
  */
 
-use Doctrine\Common\Collections\ArrayCollection;
+
 
 class Point {
 

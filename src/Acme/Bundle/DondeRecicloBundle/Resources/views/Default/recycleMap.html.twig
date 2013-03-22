@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=true&language=en&libraries=places"></script>
+	<script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("li#tab-1").addClass('active');
+		});
+	</script>
+{% endblock javascripts %}
+
+{% block container %}
+	<div class="row">
+		<span class="slot-0 text-form">Find the location in the map</span><input id="searchTextField" size="50" type="text" class="slot-1-2" placeholder="Enter a location" autocomplete="off">
+	</div>
+	<div class="row slot-6-7" id="map" style="height:400px">
+	
+	</div>
+{% endblock container %}

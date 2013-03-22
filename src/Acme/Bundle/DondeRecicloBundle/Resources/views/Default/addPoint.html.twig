@@ -8,6 +8,10 @@
 		$(function(){
 			$("li#tab-3").addClass('active');
 			$("#addPointForm").validate();
+
+			{% if status is not null %}
+				alert("{{ status }}");
+			{% endif %}
 		});
 	</script>
 {% endblock javascripts %}

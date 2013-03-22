@@ -208,78 +208,67 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/dondereciclo')) {
             // _dondereciclo
-            if (preg_match('#^/dondereciclo/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => '_dondereciclo')), array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::indexAction',));
+            if (rtrim($pathinfo, '/') === '/dondereciclo') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', '_dondereciclo');
+                }
+
+                return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::mapAction',  '_route' => '_dondereciclo',);
             }
 
             // _test
-            if (rtrim($pathinfo, '/') === '/dondereciclo/test') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', '_test');
-                }
-
+            if ($pathinfo === '/dondereciclo/test') {
                 return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::testAction',  '_route' => '_test',);
             }
 
             if (0 === strpos($pathinfo, '/dondereciclo/user')) {
                 // _user
-                if (rtrim($pathinfo, '/') === '/dondereciclo/user') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_user');
-                    }
-
+                if ($pathinfo === '/dondereciclo/user') {
                     return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::userAction',  '_route' => '_user',);
                 }
 
                 // _user_success
-                if (rtrim($pathinfo, '/') === '/dondereciclo/user') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_user_success');
-                    }
-
+                if ($pathinfo === '/dondereciclo/user') {
                     return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::userAction',  '_route' => '_user_success',);
                 }
 
                 // _user_fail
-                if (rtrim($pathinfo, '/') === '/dondereciclo/user') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_user_fail');
-                    }
-
+                if ($pathinfo === '/dondereciclo/user') {
                     return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::userAction',  '_route' => '_user_fail',);
                 }
 
             }
 
-            if (0 === strpos($pathinfo, '/dondereciclo/point')) {
-                // _point
-                if (rtrim($pathinfo, '/') === '/dondereciclo/point') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_point');
-                    }
-
-                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point',);
-                }
-
-                // _point_success
-                if (rtrim($pathinfo, '/') === '/dondereciclo/point') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_point_success');
-                    }
-
-                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point_success',);
-                }
-
-                // _point_fail
-                if (rtrim($pathinfo, '/') === '/dondereciclo/point') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_point_fail');
-                    }
-
-                    return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point_fail',);
-                }
-
+            // _point
+            if ($pathinfo === '/dondereciclo/addpoint') {
+                return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point',);
             }
+
+            // _point_success
+            if ($pathinfo === '/dondereciclo/recicle-map') {
+                return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::mapAction',  '_route' => '_point_success',);
+            }
+
+            // _point_fail
+            if ($pathinfo === '/dondereciclo/add-point-fail') {
+                return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointAction',  '_route' => '_point_fail',);
+            }
+
+            // _map
+            if ($pathinfo === '/dondereciclo/recycle-map') {
+                return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::mapAction',  '_route' => '_map',);
+            }
+
+            // _points
+            if ($pathinfo === '/dondereciclo/points') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not__points;
+                }
+
+                return array (  '_controller' => 'Acme\\Bundle\\DondeRecicloBundle\\Controller\\DefaultController::pointsAction',  '_format' => 'json',  '_route' => '_points',);
+            }
+            not__points:
 
         }
 

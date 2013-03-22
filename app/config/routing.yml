@@ -1,31 +1,40 @@
 _dondereciclo:
-    pattern:  /dondereciclo/{name}
-    defaults: { _controller: AcmeDondeRecicloBundle:Default:index }
+    pattern:  /dondereciclo/
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:map }
 
 _test:
-    pattern: /dondereciclo/test/
+    pattern: /dondereciclo/test
     defaults: { _controller: AcmeDondeRecicloBundle:Default:test }
     
 _user:
-    pattern: /dondereciclo/user/
+    pattern: /dondereciclo/user
     defaults: { _controller: AcmeDondeRecicloBundle:Default:user }
     
 _user_success:
-    pattern: /dondereciclo/user/
+    pattern: /dondereciclo/user
     defaults: { _controller: AcmeDondeRecicloBundle:Default:user }
     
 _user_fail:
-    pattern: /dondereciclo/user/
+    pattern: /dondereciclo/user
     defaults: { _controller: AcmeDondeRecicloBundle:Default:user }
     
 _point:
-    pattern: /dondereciclo/point/
+    pattern: /dondereciclo/addpoint
     defaults: { _controller: AcmeDondeRecicloBundle:Default:point }
     
 _point_success:
-    pattern: /dondereciclo/point/
-    defaults: { _controller: AcmeDondeRecicloBundle:Default:point }
+    pattern: /dondereciclo/recicle-map
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:map }
     
 _point_fail:
-    pattern: /dondereciclo/point/
+    pattern: /dondereciclo/add-point-fail
     defaults: { _controller: AcmeDondeRecicloBundle:Default:point }
+    
+_map:
+    pattern: /dondereciclo/recycle-map
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:map }
+    
+_points:
+    pattern: /dondereciclo/points
+    defaults: { _controller: AcmeDondeRecicloBundle:Default:points , _format: json}
+    requirements: { _format: (xml|json), _method: GET }
